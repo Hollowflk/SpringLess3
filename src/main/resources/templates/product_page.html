@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+</head>
+<body>
+    <span th:text="${product.getTitle()}"></span>
+    <span th:text="${product.getId()}"></span>
+
+    <a th:href="@{'/product/all'}" >На страницу продуктов</a>
+</body>
+</html>
