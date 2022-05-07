@@ -1,13 +1,13 @@
 package ru.geekbrains.SpringLess3.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ru.geekbrains.SpringLess3.Model.Product;
 import ru.geekbrains.SpringLess3.Repository.ProductsRepository;
 
 import java.util.List;
 
-@Component
+@Service
 public class ProductsService {
 
     @Autowired
@@ -25,5 +25,10 @@ public class ProductsService {
     public void changeCoast(Integer productId, Integer coast){
         Product product = productsRepository.getProductById(productId);
         product.setCoast(product.getCoast() + coast);
+    }
+
+    public void deleteProduct(Integer id){
+        Product product = productsRepository.getProductById(id);
+        productsRepository.deleteProduct(product);
     }
 }

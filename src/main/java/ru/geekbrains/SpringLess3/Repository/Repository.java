@@ -9,4 +9,6 @@ public interface Repository {
     List<Product> allProducts();
 
     Product getProductById(Integer id);
+
+    void deleteProduct(Product product);
 }

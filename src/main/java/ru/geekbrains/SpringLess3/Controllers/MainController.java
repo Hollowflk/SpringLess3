@@ -22,9 +22,15 @@ public class MainController {
     }
 
     @GetMapping("/product/change_coast")
-    public void changeCoast(@RequestParam Integer id, @RequestParam Integer coast){
-        productsService.changeCoast(id, coast);
+    public void changeCoast(@RequestParam Integer productId, @RequestParam Integer coast){
+        productsService.changeCoast(productId, coast);
     }
+
+    @GetMapping("/product/delete")
+    public void deleteProduct(Integer productId){
+        productsService.deleteProduct(productId);
+    }
+
 
 //    @GetMapping("/product/all")
 //    public String allProducts(Model model){

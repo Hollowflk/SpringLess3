@@ -21,6 +21,18 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
         });
     };
 
+    $scope.deleteProduct = function (productId){
+        $http({
+            url: contextPath + '/product/delete',
+            method: 'GET',
+            params: {
+                productId: productId
+            }
+        }).then(function (response){
+            $scope.loadProducts();
+        });
+    };
+
     $scope.loadProducts();
 
 });

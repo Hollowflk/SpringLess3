@@ -6,7 +6,6 @@ import ru.geekbrains.SpringLess3.Model.Product;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -35,5 +34,10 @@ public class ProductsRepository implements Repository {
         return productList.stream().filter(n -> n.getId().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Product not found"));
+    }
+
+    @Override
+    public void deleteProduct(Product product) {
+        productList.remove(product);
     }
 }
